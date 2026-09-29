@@ -1,0 +1,18 @@
+<!--
+  Minimal lab configuration for learning and controlled testing.
+  Status: draft; validate against the installed Sysmon schema before use.
+-->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <RuleGroup name="Process creation" groupRelation="or">
+      <ProcessCreate onmatch="exclude" />
+    </RuleGroup>
+    <RuleGroup name="Network connections" groupRelation="or">
+      <NetworkConnect onmatch="exclude" />
+    </RuleGroup>
+    <RuleGroup name="File creation" groupRelation="or">
+      <FileCreate onmatch="exclude" />
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

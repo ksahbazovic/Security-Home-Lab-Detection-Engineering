@@ -1,0 +1,9 @@
+<!--
+  Draft Wazuh agent configuration excerpt.
+  Add this localfile block to the Windows agent configuration only after
+  confirming the channel name in Event Viewer. Validate in the lab.
+-->
+<localfile>
+  <location>Microsoft-Windows-Sysmon/Operational</location>
+  <log_format>eventchannel</log_format>
+</localfile>

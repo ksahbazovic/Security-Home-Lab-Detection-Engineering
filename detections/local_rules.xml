@@ -1,0 +1,36 @@
+<!--
+  Draft custom Wazuh rules for controlled lab validation.
+  IDs 100100-100199 are reserved for this project.
+  Field names and parent rule groups must be confirmed with actual Wazuh events
+  and wazuh-logtest before these rules are marked validated.
+-->
+<group name="windows,sysmon,custom_detection,">
+  <rule id="100100" level="8">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\powershell\\.exe$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)(-enc|-encodedcommand)</field>
+    <description>Potential encoded PowerShell execution</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+  <rule id="100101" level="7">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\certutil\\.exe$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)(-urlcache|-split)</field>
+    <description>Certutil executed with download-related arguments</description>
+    <mitre>
+      <id>T1105</id>
+    </mitre>
+  </rule>
+
+  <rule id="100102" level="7">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\rundll32\\.exe$</field>
+    <description>Rundll32 process execution observed</description>
+    <mitre>
+      <id>T1218.011</id>
+    </mitre>
+  </rule>
+</group>
