@@ -1,0 +1,37 @@
+# Secrets and credentials
+.env
+*.pem
+*.key
+*.pfx
+*.p12
+*password*
+*credentials*
+
+# Virtual machines and disk images
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.iso
+
+# Archives and raw logs
+*.zip
+*.tar
+*.tar.gz
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS and editors
+.DS_Store
+.vscode/
+.idea/
+
+# Keep sanitized examples only
+samples/raw/
