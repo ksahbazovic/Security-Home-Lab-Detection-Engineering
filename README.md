@@ -1,12 +1,14 @@
 # Security Home Lab — Detection Engineering
 
-> **Project status:** In progress
+> **Project status:** Repository implementation complete; live lab deployment and evidence collection in progress
 
 ## Project summary
 
 This repository documents a three-system security home lab designed to simulate and detect common attack techniques. The environment consists of a Windows endpoint, a Linux server, and a Wazuh SIEM system running through VirtualBox on an Apple Silicon Mac.
 
 The project uses **Python, Sysmon, Wazuh, VirtualBox, Windows, and Linux**. It includes endpoint-monitoring configurations, three custom detection rules mapped to MITRE ATT&CK, a tested Python Sysmon-log parser, and a NIST Cybersecurity Framework gap assessment.
+
+For the complete project narrative, implementation decisions, findings, and validation plan, see the [final project report](docs/final-project-report.md).
 
 ## Lab architecture
 
@@ -82,6 +84,17 @@ python3 -m unittest discover -s tests -v
 | Windows endpoint | Deployment pending |
 | Wazuh SIEM | Deployment pending |
 | NIST CSF assessment | Initial assessment completed; evidence updates pending |
+
+## Project documentation
+
+- [Final project report](docs/final-project-report.md)
+- [Architecture](docs/architecture.md)
+- [Setup notes](docs/setup-notes.md)
+- [Detection catalog](docs/detection-catalog.md)
+- [Detection test plan](docs/test-plan.md)
+- [NIST CSF gap analysis](docs/nist-csf-gap-analysis.md)
+- [Incident-response playbook](docs/incident-response-playbook.md)
+- [Troubleshooting notes](docs/troubleshooting.md)
 
 ## Repository structure
 
